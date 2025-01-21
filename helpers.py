@@ -1,6 +1,7 @@
 import string
 import random
 import requests
+import data as dt
 from urls import BASE_URL, REG_USER_URL, LOG_USER_URL
 
 def create_random_string(lenth):
@@ -34,8 +35,8 @@ def reg_user():
 
 def get_private_token():
     private_token = []
-    response = requests.post(f'{BASE_URL}{LOG_USER_URL}', json={"email": "tutunnikov_12@yandex.ru",
-                                                                    "password": "89054743882"})
+    response = requests.post(f'{BASE_URL}{LOG_USER_URL}', json={"email": dt.test_email,
+                                                                    "password": dt.test_password})
     access_token = response.json()["accessToken"]
     refresh_token = response.json()["refreshToken"]
     if response.status_code == 200:

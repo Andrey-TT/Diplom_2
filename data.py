@@ -1,5 +1,8 @@
 import helpers as hp
 
+test_email = "tutunnikov_12@yandex.ru"
+test_password = "89054743882"
+
 create_user_payload = {
     "email": f'{hp.create_random_string(8)}@yandex.ru',
     "password": hp.create_random_string(12),
