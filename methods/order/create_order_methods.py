@@ -11,7 +11,7 @@ class CreateOrderMethods(APIManager):
 
     @allure.step('Проверка, что новый заказ создан')
     def check_order_has_been_created(self, burger):
-        assert (self.get_response_body['name'] == burger) and (self.get_response_body['success'] == True)
+        assert (self.get_response_body['name'] == burger) and (self.get_response_body['success'])
 
     @allure.step('Проверка, что заказ не создан')
     def check_error_create_order(self):
