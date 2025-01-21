@@ -1,7 +1,6 @@
 import allure
 import pytest
 import data as dt
-from conftest import registration_user_methods
 
 class TestRegistrationUser:
 

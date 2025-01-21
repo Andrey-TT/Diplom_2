@@ -1,6 +1,5 @@
 import allure
 import data as dt
-from conftest import get_order_methods
 
 class TestGetOrders:
 

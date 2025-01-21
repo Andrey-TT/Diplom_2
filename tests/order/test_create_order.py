@@ -1,7 +1,6 @@
 import allure
 import pytest
 import data as dt
-from conftest import create_order_methods
 
 class TestCreateOrder:
 
