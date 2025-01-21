@@ -4,9 +4,6 @@ from urls import BASE_URL
 
 class APIManager():
 
-    def __init__(self, response):
-        self.response = response
-
     @allure.step('POST запрос')
     def post_method(self, endpoint, **kwargs):
         self.response = requests.post(f'{BASE_URL}{endpoint}', **kwargs)
