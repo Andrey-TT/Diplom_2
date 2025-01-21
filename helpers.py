@@ -30,8 +30,6 @@ def reg_user():
         user_date.append(name)
         user_date.append(access_token)
         user_date.append(refresh_token)
-    else:
-        print('Ошибка регистрации пользователя')
     return user_date
 
 def get_private_token():
@@ -43,6 +41,4 @@ def get_private_token():
     if response.status_code == 200:
         private_token.append(access_token)
         private_token.append(refresh_token)
-    else:
-        print('Вход в личный кабинет не выполнен')
     return private_token

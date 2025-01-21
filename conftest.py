@@ -10,33 +10,28 @@ from methods.order.get_order_methods import GetOrderMethods
 
 @pytest.fixture(scope='function')
 def registration_user_methods():
-    response = requests
-    registration_user_methods = RegistrationUserMethods(response)
+    registration_user_methods = RegistrationUserMethods()
     yield registration_user_methods
-    delete_user_methods = DeleteUserMethods(response)
+    delete_user_methods = DeleteUserMethods()
     if registration_user_methods.get_auth_token():
         delete_user_methods.delete_user({'Authrization': registration_user_methods.get_auth_token()})
 
 @pytest.fixture()
 def login_user_methods():
-    response = requests
-    login_user_methods = LoginUserMethods(response)
+    login_user_methods = LoginUserMethods()
     return login_user_methods
 
 @pytest.fixture()
 def change_user_methods():
-    response = requests
-    change_user_methods = ChangeUserMethods(response)
+    change_user_methods = ChangeUserMethods()
     return change_user_methods
 
 @pytest.fixture()
 def create_order_methods():
-    response = requests
-    create_order_methods = CreateOrderMethods(response)
+    create_order_methods = CreateOrderMethods()
     return create_order_methods
 
 @pytest.fixture()
 def get_order_methods():
-    response = requests
-    get_order_methods = GetOrderMethods(response)
+    get_order_methods = GetOrderMethods()
     return get_order_methods

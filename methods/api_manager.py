@@ -34,5 +34,4 @@ class APIManager():
 
     @allure.step('Проверка статус кода')
     def check_status_code(self, code):
-        print(self.response.status_code)
         assert self.response.status_code == code

@@ -9,7 +9,6 @@ class TestRegistrationUser:
     def test_registration_user(self, registration_user_methods):
         registration_user_methods.registration_user(dt.create_user_payload)
         registration_user_methods.check_status_code(200)
-        print(registration_user_methods.get_auth_token())
         registration_user_methods.check_registration_user_successfully()
 
     @allure.title("Тест вывода ошибки при регистрации пользователя без почты, логина или пароля")
@@ -18,7 +17,6 @@ class TestRegistrationUser:
         payload = dt.create_user_payload.copy()
         payload[key] = None
         registration_user_methods.registration_user(payload)
-        print(registration_user_methods.get_auth_token())
         registration_user_methods.check_status_code(403)
         registration_user_methods.check_registration_error()
 
@@ -26,6 +24,5 @@ class TestRegistrationUser:
     def test_error_on_duplicate_user_registration(self, registration_user_methods):
         registration_user_methods.registration_user(dt.created_user_payload)
         registration_user_methods.check_status_code(403)
-        print(registration_user_methods.get_auth_token())
         registration_user_methods.check_registration_user_failed()
         registration_user_methods.check_user_already_exist_error()
